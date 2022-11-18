@@ -1,0 +1,9 @@
+{
+  "IsEncrypted": false,
+  "Values": {
+    "FUNCTIONS_WORKER_RUNTIME": "powershell",
+    "FUNCTIONS_WORKER_RUNTIME_VERSION": "7.2",
+    "AzureWebJobsStorage": "",
+    "SqlConnectionString": "Data Source=localhost,1433;Initial Catalog=master;User ID=sa;Password=xxx;Pooling=False;Trust Server Certificate=True;Application Name=sqlops-connection-string"
+  }
+}

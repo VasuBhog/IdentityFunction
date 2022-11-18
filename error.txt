@@ -1,0 +1,528 @@
+ERROR: (Line 524)
+2022-11-16T21:37:42.0287843Z  [4160] [2022-11-16T21:37:41.795Z] System.Private.CoreLib: Exception while executing function: Functions.AddProductWithMultiplePrimaryColumnsAndIdentity. Microsoft.Azure.WebJobs.Host: Error while handling parameter _binder after function returned:. Microsoft.Azure.WebJobs.Extensions.Sql: Unexpected error upserting rows. Core Microsoft SqlClient Data Provider: Conversion failed when converting the nvarchar value 'MyProduct' to data type int.
+
+LOGS: 
+2022-11-16T21:37:41.9294498Z [xUnit.net 00:09:22.17]     Microsoft.Azure.WebJobs.Extensions.Sql.Tests.Integration.SqlOutputBindingIntegrationTests.AddProductWithIdentity_MultiplePrimaryColumns(lang: PowerShell) [FAIL]
+2022-11-16T21:37:41.9816653Z   Failed Microsoft.Azure.WebJobs.Extensions.Sql.Tests.Integration.SqlOutputBindingIntegrationTests.AddProductWithIdentity_MultiplePrimaryColumns(lang: PowerShell) [12 s]
+2022-11-16T21:37:41.9818290Z   Error Message:
+2022-11-16T21:37:41.9819448Z    System.AggregateException : One or more errors occurred. (Http request failed with code InternalServerError. Please check output for more detailed message.
+2022-11-16T21:37:41.9820433Z Expected: True
+2022-11-16T21:37:41.9821120Z Actual:   False)
+2022-11-16T21:37:41.9822004Z ---- Http request failed with code InternalServerError. Please check output for more detailed message.
+2022-11-16T21:37:41.9822768Z Expected: True
+2022-11-16T21:37:41.9823705Z Actual:   False
+2022-11-16T21:37:41.9824945Z   Stack Trace:
+2022-11-16T21:37:41.9826579Z      at System.Threading.Tasks.Task.ThrowIfExceptional(Boolean includeTaskCanceledExceptions)
+2022-11-16T21:37:41.9830811Z    at System.Threading.Tasks.Task.Wait(Int32 millisecondsTimeout, CancellationToken cancellationToken)
+2022-11-16T21:37:41.9832486Z    at System.Threading.Tasks.Task.Wait()
+2022-11-16T21:37:41.9834400Z    at Microsoft.Azure.WebJobs.Extensions.Sql.Tests.Integration.SqlOutputBindingIntegrationTests.AddProductWithIdentity_MultiplePrimaryColumns(SupportedLanguages lang) in D:\a\1\s\test\Integration\SqlOutputBindingIntegrationTests.cs:line 271
+2022-11-16T21:37:41.9835886Z ----- Inner Stack Trace -----
+2022-11-16T21:37:41.9837783Z    at Microsoft.Azure.WebJobs.Extensions.Sql.Tests.Integration.IntegrationTestBase.SendGetRequest(String requestUri, Boolean verifySuccess) in D:\a\1\s\test\Integration\IntegrationTestBase.cs:line 360
+2022-11-16T21:37:41.9839119Z   Standard Output Messages:
+2022-11-16T21:37:41.9839963Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\Products.sql
+2022-11-16T21:37:41.9841299Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsColumnTypes.sql
+2022-11-16T21:37:41.9842084Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsCostNotNull.sql
+2022-11-16T21:37:41.9842785Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsNameNotNull.sql
+2022-11-16T21:37:41.9843525Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsWithDefaultPK.sql
+2022-11-16T21:37:41.9844299Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsWithIdentity.sql
+2022-11-16T21:37:41.9845088Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsWithMultiplePrimaryColumnsAndIdentity.sql
+2022-11-16T21:37:41.9845878Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsWithoutPrimaryKey.sql
+2022-11-16T21:37:41.9846698Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsWithReservedPrimaryKeyColumnNames.sql
+2022-11-16T21:37:41.9847492Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Tables\ProductsWithUnsupportedColumnTypes.sql
+2022-11-16T21:37:41.9848237Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\Views\ProductsNamesView.sql
+2022-11-16T21:37:41.9848968Z  Executing script $D:\a\1\s\test\bin\Release\net6\Database\StoredProcedures\SelectProductsCost.sql
+2022-11-16T21:37:41.9850208Z  Starting C:\npm\prefix\node_modules\azure-functions-core-tools\bin\func.exe start --verbose --port 7071 --functions AddProductWithMultiplePrimaryColumnsAndIdentity in D:\a\1\s\test\bin\Release\net6\SqlExtensionSamples\PowerShell
+2022-11-16T21:37:41.9851376Z  Waiting for Azure Function host to start...
+2022-11-16T21:37:41.9851896Z  [4160]                   %%%%%%
+2022-11-16T21:37:41.9852363Z  [4160]                  %%%%%%
+2022-11-16T21:37:41.9852885Z  [4160]             @   %%%%%%    @
+2022-11-16T21:37:41.9853371Z  [4160]           @@   %%%%%%      @@
+2022-11-16T21:37:41.9853858Z  [4160]        @@@    %%%%%%%%%%%    @@@
+2022-11-16T21:37:41.9854348Z  [4160]      @@      %%%%%%%%%%        @@
+2022-11-16T21:37:41.9854868Z  [4160]        @@         %%%%       @@
+2022-11-16T21:37:41.9855336Z  [4160]          @@      %%%       @@
+2022-11-16T21:37:41.9855796Z  [4160]            @@    %%      @@
+2022-11-16T21:37:41.9856250Z  [4160]                 %%
+2022-11-16T21:37:41.9856707Z  [4160]                 %
+2022-11-16T21:37:41.9857239Z  [4160] Azure Functions Core Tools
+2022-11-16T21:37:41.9857814Z  [4160] Core Tools Version:       4.0.4895 Commit hash: N/A  (64-bit)
+2022-11-16T21:37:41.9858419Z  [4160] Function Runtime Version: 4.13.0.19486
+2022-11-16T21:37:41.9859105Z  [4160] Skipping 'SqlConnectionString' from local settings as it's already defined in current environment variables.
+2022-11-16T21:37:41.9859900Z  [4160] [2022-11-16T21:37:31.623Z] Starting Rpc Initialization Service.
+2022-11-16T21:37:41.9860659Z  [4160] [2022-11-16T21:37:31.624Z] Initializing RpcServer
+2022-11-16T21:37:41.9884397Z  [4160] [2022-11-16T21:37:31.683Z] Started AspNetCoreGrpcServer on http://127.0.0.1:56987.
+2022-11-16T21:37:41.9885538Z  [4160] [2022-11-16T21:37:31.683Z] RpcServer initialized
+2022-11-16T21:37:41.9886266Z  [4160] [2022-11-16T21:37:31.684Z] Rpc Initialization Service started.
+2022-11-16T21:37:41.9887059Z  [4160] [2022-11-16T21:37:31.690Z] Startup operation 'a852fd93-8626-4f09-aa10-185a368c61de' with parent id '(null)' created.
+2022-11-16T21:37:41.9887903Z  [4160] [2022-11-16T21:37:31.698Z] Startup operation 'a852fd93-8626-4f09-aa10-185a368c61de' starting.
+2022-11-16T21:37:41.9889036Z  [4160] [2022-11-16T21:37:31.703Z] Building host: version spec: , startup suppressed: 'False', configuration suppressed: 'False', startup operation id: 'a852fd93-8626-4f09-aa10-185a368c61de'
+2022-11-16T21:37:41.9889977Z  [4160] [2022-11-16T21:37:31.710Z] Host configuration applied.
+2022-11-16T21:37:41.9890776Z  [4160] [2022-11-16T21:37:31.712Z] Reading host configuration file 'D:\a\1\s\test\bin\Release\net6\SqlExtensionSamples\PowerShell\host.json'
+2022-11-16T21:37:41.9891563Z  [4160] [2022-11-16T21:37:31.713Z] Host configuration file read:
+2022-11-16T21:37:41.9892201Z  [4160] [2022-11-16T21:37:31.713Z] {
+2022-11-16T21:37:41.9892785Z  [4160] [2022-11-16T21:37:31.713Z]   "version": "2.0",
+2022-11-16T21:37:41.9893384Z  [4160] [2022-11-16T21:37:31.713Z]   "logging": {
+2022-11-16T21:37:41.9893992Z  [4160] [2022-11-16T21:37:31.713Z]     "applicationInsights": {
+2022-11-16T21:37:41.9894641Z  [4160] [2022-11-16T21:37:31.714Z]       "samplingSettings": {
+2022-11-16T21:37:41.9895158Z  [4160] [2022-11-16T21:37:31.714Z]         "isEnabled": true,
+2022-11-16T21:37:41.9895786Z  [4160] [2022-11-16T21:37:31.714Z]         "excludedTypes": "Request"
+2022-11-16T21:37:41.9896384Z  [4160] [2022-11-16T21:37:31.714Z]       }
+2022-11-16T21:37:41.9896939Z  [4160] [2022-11-16T21:37:31.714Z]     },
+2022-11-16T21:37:41.9897561Z  [4160] [2022-11-16T21:37:31.714Z]     "logLevel": {
+2022-11-16T21:37:41.9898160Z  [4160] [2022-11-16T21:37:31.714Z]       "default": "Debug"
+2022-11-16T21:37:41.9898736Z  [4160] [2022-11-16T21:37:31.714Z]     }
+2022-11-16T21:37:41.9899315Z  [4160] [2022-11-16T21:37:31.714Z]   },
+2022-11-16T21:37:41.9899945Z  [4160] [2022-11-16T21:37:31.714Z]   "extensionBundle": {
+2022-11-16T21:37:41.9900639Z  [4160] [2022-11-16T21:37:31.715Z]     "id": "Microsoft.Azure.Functions.ExtensionBundle.Preview",
+2022-11-16T21:37:41.9901339Z  [4160] [2022-11-16T21:37:31.715Z]     "version": "[4.*, 5.0.0)"
+2022-11-16T21:37:41.9901929Z  [4160] [2022-11-16T21:37:31.715Z]   }
+2022-11-16T21:37:41.9902520Z  [4160] [2022-11-16T21:37:31.715Z] }
+2022-11-16T21:37:41.9903506Z  [4160] [2022-11-16T21:37:31.727Z] Workers Directory set to: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers
+2022-11-16T21:37:41.9904509Z  [4160] [2022-11-16T21:37:31.728Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\java\worker.config.json
+2022-11-16T21:37:41.9905363Z  [4160] [2022-11-16T21:37:31.767Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9906216Z  [4160] [2022-11-16T21:37:31.767Z] FUNCTIONS_WORKER_RUNTIME set to powershell. Skipping WorkerConfig for language: java
+2022-11-16T21:37:41.9907121Z  [4160] [2022-11-16T21:37:31.767Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\node\worker.config.json
+2022-11-16T21:37:41.9907964Z  [4160] [2022-11-16T21:37:31.767Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9908808Z  [4160] [2022-11-16T21:37:31.767Z] FUNCTIONS_WORKER_RUNTIME set to powershell. Skipping WorkerConfig for language: node
+2022-11-16T21:37:41.9909746Z  [4160] [2022-11-16T21:37:31.767Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\powershell\worker.config.json
+2022-11-16T21:37:41.9910605Z  [4160] [2022-11-16T21:37:31.769Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9911443Z  [4160] [2022-11-16T21:37:31.770Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME_VERSION: ~7.2
+2022-11-16T21:37:41.9912685Z  [4160] [2022-11-16T21:37:31.773Z] Added WorkerConfig for language: powershell
+2022-11-16T21:37:41.9913534Z  [4160] [2022-11-16T21:37:31.773Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\python\worker.config.json
+2022-11-16T21:37:41.9914391Z  [4160] [2022-11-16T21:37:31.775Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9915457Z  [4160] [2022-11-16T21:37:31.775Z] FUNCTIONS_WORKER_RUNTIME set to powershell. Skipping WorkerConfig for language: python
+2022-11-16T21:37:41.9916892Z  [4160] [2022-11-16T21:37:31.777Z] Looking for extension bundle Microsoft.Azure.Functions.ExtensionBundle.Preview at C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview
+2022-11-16T21:37:41.9918327Z  [4160] [2022-11-16T21:37:31.778Z] Found a matching extension bundle at C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview\4.3.1
+2022-11-16T21:37:41.9919304Z  [4160] [2022-11-16T21:37:31.793Z] Loading functions metadata
+2022-11-16T21:37:41.9919948Z  [4160] [2022-11-16T21:37:31.795Z] Reading functions metadata
+2022-11-16T21:37:41.9920592Z  [4160] [2022-11-16T21:37:31.796Z] Reading functions metadata
+2022-11-16T21:37:41.9921267Z  [4160] [2022-11-16T21:37:31.810Z] 21 functions found
+2022-11-16T21:37:41.9921891Z  [4160] [2022-11-16T21:37:31.812Z] 21 functions found
+2022-11-16T21:37:41.9922511Z  [4160] [2022-11-16T21:37:31.818Z] 21 functions loaded
+2022-11-16T21:37:41.9923483Z  [4160] [2022-11-16T21:37:31.820Z] Looking for extension bundle Microsoft.Azure.Functions.ExtensionBundle.Preview at C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview
+2022-11-16T21:37:41.9924776Z  [4160] [2022-11-16T21:37:31.820Z] Found a matching extension bundle at C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview\4.3.1
+2022-11-16T21:37:41.9926063Z  [4160] [2022-11-16T21:37:31.820Z] Fetching information on versions of extension bundle Microsoft.Azure.Functions.ExtensionBundle.Preview available on https://functionscdn.azureedge.net/public/ExtensionBundles/Microsoft.Azure.Functions.ExtensionBundle.Preview/index.json
+2022-11-16T21:37:41.9927942Z  [4160] [2022-11-16T21:37:31.863Z] Skipping bundle download since it already exists at path C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview\4.3.1
+2022-11-16T21:37:41.9929414Z  [4160] [2022-11-16T21:37:31.866Z] Loading extension bundle from C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview\4.3.1\bin
+2022-11-16T21:37:41.9930664Z  [4160] [2022-11-16T21:37:31.866Z] Script Startup resetting load context with base path: 'C:\Users\VssAdministrator\.azure-functions-core-tools\Functions\ExtensionBundles\Microsoft.Azure.Functions.ExtensionBundle.Preview\4.3.1\bin'.
+2022-11-16T21:37:41.9931626Z  [4160] [2022-11-16T21:37:31.873Z] Loading startup extension 'SqlBinding'
+2022-11-16T21:37:41.9932318Z  [4160] [2022-11-16T21:37:31.978Z] Loaded extension 'SqlBinding' (1.0.31.0)
+2022-11-16T21:37:41.9933075Z  [4160] [2022-11-16T21:37:31.991Z] Loading startup extension 'AzureStorageQueues'
+2022-11-16T21:37:41.9933797Z  [4160] [2022-11-16T21:37:31.993Z] Loaded extension 'AzureStorageQueues' (5.0.1.0)
+2022-11-16T21:37:41.9934480Z  [4160] [2022-11-16T21:37:31.999Z] Host configuration applied.
+2022-11-16T21:37:41.9935266Z  [4160] [2022-11-16T21:37:31.999Z] Reading host configuration file 'D:\a\1\s\test\bin\Release\net6\SqlExtensionSamples\PowerShell\host.json'
+2022-11-16T21:37:41.9936097Z  [4160] [2022-11-16T21:37:31.999Z] Host configuration file read:
+2022-11-16T21:37:41.9936783Z  [4160] [2022-11-16T21:37:31.999Z] {
+2022-11-16T21:37:41.9937366Z  [4160] [2022-11-16T21:37:32.000Z]   "version": "2.0",
+2022-11-16T21:37:41.9937967Z  [4160] [2022-11-16T21:37:32.000Z]   "logging": {
+2022-11-16T21:37:41.9938619Z  [4160] [2022-11-16T21:37:32.000Z]     "applicationInsights": {
+2022-11-16T21:37:41.9939249Z  [4160] [2022-11-16T21:37:32.000Z]       "samplingSettings": {
+2022-11-16T21:37:41.9939872Z  [4160] [2022-11-16T21:37:32.000Z]         "isEnabled": true,
+2022-11-16T21:37:41.9940500Z  [4160] [2022-11-16T21:37:32.000Z]         "excludedTypes": "Request"
+2022-11-16T21:37:41.9941146Z  [4160] [2022-11-16T21:37:32.000Z]       }
+2022-11-16T21:37:41.9941881Z  [4160] [2022-11-16T21:37:32.000Z]     },
+2022-11-16T21:37:41.9942358Z  [4160] [2022-11-16T21:37:32.000Z]     "logLevel": {
+2022-11-16T21:37:41.9943120Z  [4160] [2022-11-16T21:37:32.000Z]       "default": "Debug"
+2022-11-16T21:37:41.9943888Z  [4160] [2022-11-16T21:37:32.001Z]     }
+2022-11-16T21:37:41.9944492Z  [4160] [2022-11-16T21:37:32.001Z]   },
+2022-11-16T21:37:41.9945093Z  [4160] [2022-11-16T21:37:32.001Z]   "extensionBundle": {
+2022-11-16T21:37:41.9945788Z  [4160] [2022-11-16T21:37:32.001Z]     "id": "Microsoft.Azure.Functions.ExtensionBundle.Preview",
+2022-11-16T21:37:41.9946491Z  [4160] [2022-11-16T21:37:32.001Z]     "version": "[4.*, 5.0.0)"
+2022-11-16T21:37:41.9947124Z  [4160] [2022-11-16T21:37:32.001Z]   }
+2022-11-16T21:37:41.9947673Z  [4160] [2022-11-16T21:37:32.001Z] }
+2022-11-16T21:37:41.9948413Z  [4160] [2022-11-16T21:37:32.032Z] Services registered by external startup type Microsoft.Azure.WebJobs.Extensions.Sql.SqlBindingStartup:
+2022-11-16T21:37:41.9949455Z  [4160] [2022-11-16T21:37:32.032Z]  Microsoft.Azure.WebJobs.Host.Config.IExtensionConfigProvider: Implementation: Microsoft.Azure.WebJobs.Extensions.Sql.SqlBindingConfigProvider, Lifetime: Singleton
+2022-11-16T21:37:41.9950569Z  [4160] [2022-11-16T21:37:32.040Z] Services registered by external startup type Microsoft.Azure.WebJobs.Extensions.Storage.AzureStorageQueuesWebJobsStartup:
+2022-11-16T21:37:41.9951617Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Extensions.Azure.AzureEventSourceLogForwarder: Implementation: Microsoft.Extensions.Azure.AzureEventSourceLogForwarder, Lifetime: Singleton
+2022-11-16T21:37:41.9952695Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Extensions.Azure.AzureComponentFactory: Implementation: Microsoft.Extensions.Azure.AzureComponentFactoryImpl, Lifetime: Singleton
+2022-11-16T21:37:41.9953892Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Common.Listeners.SharedQueueWatcher: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Common.Listeners.SharedQueueWatcher, Lifetime: Singleton
+2022-11-16T21:37:41.9955266Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Common.Listeners.ISharedContextProvider: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Common.Listeners.SharedContextProvider, Lifetime: Singleton
+2022-11-16T21:37:41.9956583Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Queues.QueueServiceClientProvider: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Queues.QueueServiceClientProvider, Lifetime: Singleton
+2022-11-16T21:37:41.9957798Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Queues.QueueCausalityManager: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Queues.QueueCausalityManager, Lifetime: Singleton
+2022-11-16T21:37:41.9959196Z  [4160] [2022-11-16T21:37:32.040Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Common.IContextSetter`1[[Microsoft.Azure.WebJobs.Extensions.Storage.Common.IMessageEnqueuedWatcher, Microsoft.Azure.WebJobs.Extensions.Storage.Queues, Version=5.0.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8]]: Factory, Lifetime: Singleton
+2022-11-16T21:37:41.9960847Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Common.IContextGetter`1[[Microsoft.Azure.WebJobs.Extensions.Storage.Common.IMessageEnqueuedWatcher, Microsoft.Azure.WebJobs.Extensions.Storage.Queues, Version=5.0.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8]]: Factory, Lifetime: Singleton
+2022-11-16T21:37:41.9962461Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Azure.WebJobs.Extensions.Storage.Queues.Triggers.QueueTriggerAttributeBindingProvider: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Queues.Triggers.QueueTriggerAttributeBindingProvider, Lifetime: Singleton
+2022-11-16T21:37:41.9963819Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Azure.WebJobs.Host.Config.IExtensionConfigProvider: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Queues.Config.QueuesExtensionConfigProvider, Lifetime: Singleton
+2022-11-16T21:37:41.9965150Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Extensions.Options.IConfigureOptions`1[[Microsoft.Azure.WebJobs.Host.QueuesOptions, Microsoft.Azure.WebJobs.Extensions.Storage.Queues, Version=5.0.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8]]: Factory, Lifetime: Singleton
+2022-11-16T21:37:41.9966320Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Azure.WebJobs.Host.Config.IExtensionOptionsProvider: Factory, Lifetime: Singleton
+2022-11-16T21:37:41.9967362Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Azure.WebJobs.Host.Queues.IQueueProcessorFactory: Implementation: Microsoft.Azure.WebJobs.Extensions.Storage.Queues.DefaultQueueProcessorFactory, Lifetime: Singleton
+2022-11-16T21:37:41.9968707Z  [4160] [2022-11-16T21:37:32.041Z]  Microsoft.Extensions.Options.IConfigureOptions`1[[Microsoft.Azure.WebJobs.Host.QueuesOptions, Microsoft.Azure.WebJobs.Extensions.Storage.Queues, Version=5.0.1.0, Culture=neutral, PublicKeyToken=92742159e12e44c8]]: Factory, Lifetime: Transient
+2022-11-16T21:37:41.9969883Z  [4160] [2022-11-16T21:37:32.212Z] Active host changing from '(null)' to 'c654e99b-9f26-4bad-9392-93053d3c382e'.
+2022-11-16T21:37:41.9970987Z  [4160] [2022-11-16T21:37:32.278Z] Workers Directory set to: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers
+2022-11-16T21:37:41.9971920Z  [4160] [2022-11-16T21:37:32.279Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\java\worker.config.json
+2022-11-16T21:37:41.9972819Z  [4160] [2022-11-16T21:37:32.279Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9973629Z  [4160] [2022-11-16T21:37:32.279Z] FUNCTIONS_WORKER_RUNTIME set to powershell. Skipping WorkerConfig for language: java
+2022-11-16T21:37:41.9974743Z  [4160] [2022-11-16T21:37:32.280Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\node\worker.config.json
+2022-11-16T21:37:41.9975650Z  [4160] [2022-11-16T21:37:32.280Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9976534Z  [4160] [2022-11-16T21:37:32.280Z] FUNCTIONS_WORKER_RUNTIME set to powershell. Skipping WorkerConfig for language: node
+2022-11-16T21:37:41.9977442Z  [4160] [2022-11-16T21:37:32.280Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\powershell\worker.config.json
+2022-11-16T21:37:41.9978303Z  [4160] [2022-11-16T21:37:32.281Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9979102Z  [4160] [2022-11-16T21:37:32.281Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME_VERSION: ~7.2
+2022-11-16T21:37:41.9979834Z  [4160] [2022-11-16T21:37:32.281Z] Added WorkerConfig for language: powershell
+2022-11-16T21:37:41.9980659Z  [4160] [2022-11-16T21:37:32.281Z] Found worker config: C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\python\worker.config.json
+2022-11-16T21:37:41.9981546Z  [4160] [2022-11-16T21:37:32.282Z] EnvironmentVariable FUNCTIONS_WORKER_RUNTIME: powershell
+2022-11-16T21:37:41.9982355Z  [4160] [2022-11-16T21:37:32.282Z] FUNCTIONS_WORKER_RUNTIME set to powershell. Skipping WorkerConfig for language: python
+2022-11-16T21:37:41.9983124Z  [4160] [2022-11-16T21:37:32.369Z] Using BlobLeaseDistributedLockManager
+2022-11-16T21:37:41.9984677Z  [4160] [2022-11-16T21:37:32.416Z] Initializing Warmup Extension.
+2022-11-16T21:37:41.9985360Z  [4160] [2022-11-16T21:37:32.431Z] Telemetry disabled
+2022-11-16T21:37:41.9986082Z  [4160] [2022-11-16T21:37:32.490Z] Initializing Host. OperationId: 'a852fd93-8626-4f09-aa10-185a368c61de'.
+2022-11-16T21:37:41.9986962Z  [4160] [2022-11-16T21:37:32.497Z] Host initialization: ConsecutiveErrors=0, StartupCount=1, OperationId=a852fd93-8626-4f09-aa10-185a368c61de
+2022-11-16T21:37:41.9987928Z  [4160] [2022-11-16T21:37:32.501Z] Startup operation 'a852fd93-8626-4f09-aa10-185a368c61de' is starting host instance 'c654e99b-9f26-4bad-9392-93053d3c382e'.
+2022-11-16T21:37:41.9988763Z  [4160] [2022-11-16T21:37:32.501Z] Hosting starting
+2022-11-16T21:37:41.9989383Z  [4160] [2022-11-16T21:37:32.525Z] LoggerFilterOptions
+2022-11-16T21:37:41.9989960Z  [4160] [2022-11-16T21:37:32.525Z] {
+2022-11-16T21:37:41.9990549Z  [4160] [2022-11-16T21:37:32.525Z]   "MinLevel": "None",
+2022-11-16T21:37:41.9991188Z  [4160] [2022-11-16T21:37:32.525Z]   "Rules": [
+2022-11-16T21:37:41.9991760Z  [4160] [2022-11-16T21:37:32.525Z]     {
+2022-11-16T21:37:41.9992357Z  [4160] [2022-11-16T21:37:32.525Z]       "ProviderName": null,
+2022-11-16T21:37:41.9992947Z  [4160] [2022-11-16T21:37:32.525Z]       "CategoryName": null,
+2022-11-16T21:37:41.9993474Z  [4160] [2022-11-16T21:37:32.525Z]       "LogLevel": null,
+2022-11-16T21:37:41.9994097Z  [4160] [2022-11-16T21:37:32.526Z]       "Filter": "<AddFilter>b__0"
+2022-11-16T21:37:41.9994693Z  [4160] [2022-11-16T21:37:32.526Z]     },
+2022-11-16T21:37:41.9995256Z  [4160] [2022-11-16T21:37:32.526Z]     {
+2022-11-16T21:37:41.9995900Z  [4160] [2022-11-16T21:37:32.526Z]       "ProviderName": null,
+2022-11-16T21:37:41.9996539Z  [4160] [2022-11-16T21:37:32.526Z]       "CategoryName": null,
+2022-11-16T21:37:41.9997163Z  [4160] [2022-11-16T21:37:32.526Z]       "LogLevel": "Debug",
+2022-11-16T21:37:41.9997772Z  [4160] [2022-11-16T21:37:32.526Z]       "Filter": null
+2022-11-16T21:37:41.9998348Z  [4160] [2022-11-16T21:37:32.526Z]     },
+2022-11-16T21:37:41.9998956Z  [4160] [2022-11-16T21:37:32.526Z]     {
+2022-11-16T21:37:41.9999725Z  [4160] [2022-11-16T21:37:32.526Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2022-11-16T21:37:42.0000484Z  [4160] [2022-11-16T21:37:32.527Z]       "CategoryName": null,
+2022-11-16T21:37:42.0001099Z  [4160] [2022-11-16T21:37:32.527Z]       "LogLevel": "None",
+2022-11-16T21:37:42.0001752Z  [4160] [2022-11-16T21:37:32.527Z]       "Filter": null
+2022-11-16T21:37:42.0002332Z  [4160] [2022-11-16T21:37:32.527Z]     },
+2022-11-16T21:37:42.0002891Z  [4160] [2022-11-16T21:37:32.527Z]     {
+2022-11-16T21:37:42.0003793Z  [4160] [2022-11-16T21:37:32.527Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2022-11-16T21:37:42.0004843Z  [4160] [2022-11-16T21:37:32.527Z]       "CategoryName": null,
+2022-11-16T21:37:42.0005469Z  [4160] [2022-11-16T21:37:32.527Z]       "LogLevel": null,
+2022-11-16T21:37:42.0006099Z  [4160] [2022-11-16T21:37:32.527Z]       "Filter": "<AddFilter>b__0"
+2022-11-16T21:37:42.0006695Z  [4160] [2022-11-16T21:37:32.528Z]     },
+2022-11-16T21:37:42.0007292Z  [4160] [2022-11-16T21:37:32.528Z]     {
+2022-11-16T21:37:42.0008437Z  [4160] [2022-11-16T21:37:32.528Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+2022-11-16T21:37:42.0009263Z  [4160] [2022-11-16T21:37:32.528Z]       "CategoryName": null,
+2022-11-16T21:37:42.0009887Z  [4160] [2022-11-16T21:37:32.528Z]       "LogLevel": null,
+2022-11-16T21:37:42.0010568Z  [4160] [2022-11-16T21:37:32.528Z]       "Filter": "<AddFilter>b__0"
+2022-11-16T21:37:42.0011164Z  [4160] [2022-11-16T21:37:32.528Z]     }
+2022-11-16T21:37:42.0011723Z  [4160] [2022-11-16T21:37:32.528Z]   ]
+2022-11-16T21:37:42.0012271Z  [4160] [2022-11-16T21:37:32.528Z] }
+2022-11-16T21:37:42.0012859Z  [4160] [2022-11-16T21:37:32.529Z] LoggerFilterOptions
+2022-11-16T21:37:42.0013489Z  [4160] [2022-11-16T21:37:32.529Z] {
+2022-11-16T21:37:42.0014181Z  [4160] [2022-11-16T21:37:32.529Z]   "MinLevel": "None",
+2022-11-16T21:37:42.0014777Z  [4160] [2022-11-16T21:37:32.529Z]   "Rules": [
+2022-11-16T21:37:42.0015342Z  [4160] [2022-11-16T21:37:32.529Z]     {
+2022-11-16T21:37:42.0015978Z  [4160] [2022-11-16T21:37:32.529Z]       "ProviderName": null,
+2022-11-16T21:37:42.0016606Z  [4160] [2022-11-16T21:37:32.529Z]       "CategoryName": null,
+2022-11-16T21:37:42.0017224Z  [4160] [2022-11-16T21:37:32.529Z]       "LogLevel": null,
+2022-11-16T21:37:42.0018207Z  [4160] [2022-11-16T21:37:32.529Z]       "Filter": "<AddFilter>b__0"
+2022-11-16T21:37:42.0018891Z  [4160] [2022-11-16T21:37:32.529Z]     },
+2022-11-16T21:37:42.0019451Z  [4160] [2022-11-16T21:37:32.529Z]     {
+2022-11-16T21:37:42.0020030Z  [4160] [2022-11-16T21:37:32.530Z]       "ProviderName": null,
+2022-11-16T21:37:42.0020551Z  [4160] [2022-11-16T21:37:32.530Z]       "CategoryName": null,
+2022-11-16T21:37:42.0021089Z  [4160] [2022-11-16T21:37:32.530Z]       "LogLevel": "Debug",
+2022-11-16T21:37:42.0021588Z  [4160] [2022-11-16T21:37:32.530Z]       "Filter": null
+2022-11-16T21:37:42.0022057Z  [4160] [2022-11-16T21:37:32.530Z]     },
+2022-11-16T21:37:42.0022497Z  [4160] [2022-11-16T21:37:32.530Z]     {
+2022-11-16T21:37:42.0023100Z  [4160] [2022-11-16T21:37:32.530Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2022-11-16T21:37:42.0023875Z  [4160] [2022-11-16T21:37:32.530Z]       "CategoryName": null,
+2022-11-16T21:37:42.0024468Z  [4160] [2022-11-16T21:37:32.530Z]       "LogLevel": "None",
+2022-11-16T21:37:42.0025075Z  [4160] [2022-11-16T21:37:32.530Z]       "Filter": null
+2022-11-16T21:37:42.0025620Z  [4160] [2022-11-16T21:37:32.530Z]     },
+2022-11-16T21:37:42.0026109Z  [4160] [2022-11-16T21:37:32.531Z]     {
+2022-11-16T21:37:42.0026823Z  [4160] [2022-11-16T21:37:32.531Z]       "ProviderName": "Microsoft.Azure.WebJobs.Script.WebHost.Diagnostics.SystemLoggerProvider",
+2022-11-16T21:37:42.0027578Z  [4160] [2022-11-16T21:37:32.531Z]       "CategoryName": null,
+2022-11-16T21:37:42.0028094Z  [4160] [2022-11-16T21:37:32.531Z]       "LogLevel": null,
+2022-11-16T21:37:42.0028733Z  [4160] [2022-11-16T21:37:32.531Z]       "Filter": "<AddFilter>b__0"
+2022-11-16T21:37:42.0029304Z  [4160] [2022-11-16T21:37:32.531Z]     },
+2022-11-16T21:37:42.0029838Z  [4160] [2022-11-16T21:37:32.531Z]     {
+2022-11-16T21:37:42.0030509Z  [4160] [2022-11-16T21:37:32.531Z]       "ProviderName": "Azure.Functions.Cli.Diagnostics.ColoredConsoleLoggerProvider",
+2022-11-16T21:37:42.0031255Z  [4160] [2022-11-16T21:37:32.531Z]       "CategoryName": null,
+2022-11-16T21:37:42.0031767Z  [4160] [2022-11-16T21:37:32.531Z]       "LogLevel": null,
+2022-11-16T21:37:42.0032484Z  [4160] [2022-11-16T21:37:32.532Z]       "Filter": "<AddFilter>b__0"
+2022-11-16T21:37:42.0033080Z  [4160] [2022-11-16T21:37:32.532Z]     }
+2022-11-16T21:37:42.0033682Z  [4160] [2022-11-16T21:37:32.532Z]   ]
+2022-11-16T21:37:42.0034221Z  [4160] [2022-11-16T21:37:32.532Z] }
+2022-11-16T21:37:42.0034814Z  [4160] [2022-11-16T21:37:32.532Z] ConcurrencyOptions
+2022-11-16T21:37:42.0035287Z  [4160] [2022-11-16T21:37:32.532Z] {
+2022-11-16T21:37:42.0036194Z  [4160] [2022-11-16T21:37:32.532Z]   "DynamicConcurrencyEnabled": false,
+2022-11-16T21:37:42.0037374Z  [4160] [2022-11-16T21:37:32.532Z]   "MaximumFunctionConcurrency": 500,
+2022-11-16T21:37:42.0038159Z  [4160] [2022-11-16T21:37:32.532Z]   "CPUThreshold": 0.8,
+2022-11-16T21:37:42.0038824Z  [4160] [2022-11-16T21:37:32.532Z]   "SnapshotPersistenceEnabled": true
+2022-11-16T21:37:42.0039433Z  [4160] [2022-11-16T21:37:32.533Z] }
+2022-11-16T21:37:42.0040244Z  [4160] [2022-11-16T21:37:32.533Z] FunctionResultAggregatorOptions
+2022-11-16T21:37:42.0040882Z  [4160] [2022-11-16T21:37:32.533Z] {
+2022-11-16T21:37:42.0041476Z  [4160] [2022-11-16T21:37:32.533Z]   "BatchSize": 1000,
+2022-11-16T21:37:42.0042109Z  [4160] [2022-11-16T21:37:32.533Z]   "FlushTimeout": "00:00:30",
+2022-11-16T21:37:42.0042791Z  [4160] [2022-11-16T21:37:32.533Z]   "IsEnabled": true
+2022-11-16T21:37:42.0043494Z  [4160] [2022-11-16T21:37:32.533Z] }
+2022-11-16T21:37:42.0044079Z  [4160] [2022-11-16T21:37:32.533Z] SingletonOptions
+2022-11-16T21:37:42.0044655Z  [4160] [2022-11-16T21:37:32.533Z] {
+2022-11-16T21:37:42.0045254Z  [4160] [2022-11-16T21:37:32.533Z]   "LockPeriod": "00:00:15",
+2022-11-16T21:37:42.0045956Z  [4160] [2022-11-16T21:37:32.534Z]   "ListenerLockPeriod": "00:00:15",
+2022-11-16T21:37:42.0046679Z  [4160] [2022-11-16T21:37:32.534Z]   "LockAcquisitionTimeout": "10675199.02:48:05.4775807",
+2022-11-16T21:37:42.0047429Z  [4160] [2022-11-16T21:37:32.534Z]   "LockAcquisitionPollingInterval": "00:00:05",
+2022-11-16T21:37:42.0048171Z  [4160] [2022-11-16T21:37:32.534Z]   "ListenerLockRecoveryPollingInterval": "00:01:00"
+2022-11-16T21:37:42.0048854Z  [4160] [2022-11-16T21:37:32.534Z] }
+2022-11-16T21:37:42.0049430Z  [4160] [2022-11-16T21:37:32.534Z] QueuesOptions
+2022-11-16T21:37:42.0050004Z  [4160] [2022-11-16T21:37:32.534Z] {
+2022-11-16T21:37:42.0050579Z  [4160] [2022-11-16T21:37:32.534Z]   "BatchSize": 16,
+2022-11-16T21:37:42.0051245Z  [4160] [2022-11-16T21:37:32.534Z]   "NewBatchThreshold": 32,
+2022-11-16T21:37:42.0051904Z  [4160] [2022-11-16T21:37:32.535Z]   "MaxPollingInterval": "00:00:02",
+2022-11-16T21:37:42.0052558Z  [4160] [2022-11-16T21:37:32.535Z]   "MaxDequeueCount": 5,
+2022-11-16T21:37:42.0053201Z  [4160] [2022-11-16T21:37:32.535Z]   "VisibilityTimeout": "00:00:00",
+2022-11-16T21:37:42.0053910Z  [4160] [2022-11-16T21:37:32.535Z]   "MessageEncoding": "Base64"
+2022-11-16T21:37:42.0054504Z  [4160] [2022-11-16T21:37:32.535Z] }
+2022-11-16T21:37:42.0055081Z  [4160] [2022-11-16T21:37:32.536Z] Starting JobHost
+2022-11-16T21:37:42.0056070Z  [4160] [2022-11-16T21:37:32.543Z] Starting Host (HostId=win7v9j89oeljj-1409451356, InstanceId=c654e99b-9f26-4bad-9392-93053d3c382e, Version=4.13.0.19486, ProcessId=4160, AppDomainId=1, InDebugMode=False, InDiagnosticMode=False, FunctionsExtensionVersion=(null))
+2022-11-16T21:37:42.0057125Z  [4160] [2022-11-16T21:37:32.552Z] Loading functions metadata
+2022-11-16T21:37:42.0057773Z  [4160] [2022-11-16T21:37:32.553Z] Reading functions metadata
+2022-11-16T21:37:42.0058409Z  [4160] [2022-11-16T21:37:32.553Z] Reading functions metadata
+2022-11-16T21:37:42.0059034Z  [4160] [2022-11-16T21:37:32.556Z] 21 functions found
+2022-11-16T21:37:42.0059692Z  [4160] [2022-11-16T21:37:32.556Z] 21 functions found
+2022-11-16T21:37:42.0060323Z  [4160] [2022-11-16T21:37:32.560Z] Reading functions metadata
+2022-11-16T21:37:42.0060958Z  [4160] [2022-11-16T21:37:32.568Z] 1 functions found
+2022-11-16T21:37:42.0061769Z  [4160] [2022-11-16T21:37:32.569Z] A function allow list has been specified, excluding all but the following functions: [AddProductWithMultiplePrimaryColumnsAndIdentity]
+2022-11-16T21:37:42.0062729Z  [4160] [2022-11-16T21:37:32.570Z] 1 functions loaded
+2022-11-16T21:37:42.0063422Z  [4160] [2022-11-16T21:37:32.582Z] Adding Function descriptor provider for language powershell.
+2022-11-16T21:37:42.0064753Z  [4160] [2022-11-16T21:37:32.583Z] Creating function descriptors.
+2022-11-16T21:37:42.0065607Z  [4160] [2022-11-16T21:37:32.618Z] Function descriptors created.
+2022-11-16T21:37:42.0066409Z  [4160] [2022-11-16T21:37:32.624Z] Placeholder mode is enabled: False
+2022-11-16T21:37:42.0067074Z  [4160] [2022-11-16T21:37:32.629Z] Generating 1 job function(s)
+2022-11-16T21:37:42.0067734Z  [4160] [2022-11-16T21:37:32.660Z] Initiating Worker Process start up
+2022-11-16T21:37:42.0068477Z  [4160] [2022-11-16T21:37:32.661Z] [channel] processing reader loop for worker 7dfa7f51-0001-4114-ba36-4d81766a098f:
+2022-11-16T21:37:42.0070624Z  [4160] [2022-11-16T21:37:32.666Z] Starting worker process with FileName:C:\Program Files\dotnet\dotnet.exe WorkingDirectory:D:\a\1\s\test\bin\Release\net6\SqlExtensionSamples\PowerShell Arguments: "C:\npm\prefix\node_modules\azure-functions-core-tools\bin\workers\powershell\7.2/Microsoft.Azure.Functions.PowerShellWorker.dll" --host 127.0.0.1 --port 56987 --workerId 7dfa7f51-0001-4114-ba36-4d81766a098f --requestId 942394e8-95c3-4c98-8415-636ffcebe1a9 --grpcMaxMessageLength 2147483647
+2022-11-16T21:37:42.0072307Z  [4160] [2022-11-16T21:37:32.671Z] C:\Program Files\dotnet\dotnet.exe process with Id=6332 started
+2022-11-16T21:37:42.0073751Z  [4160] [2022-11-16T21:37:32.705Z] Found the following functions:
+2022-11-16T21:37:42.0074494Z  [4160] [2022-11-16T21:37:32.705Z] Host.Functions.AddProductWithMultiplePrimaryColumnsAndIdentity
+2022-11-16T21:37:42.0075163Z  [4160] [2022-11-16T21:37:32.705Z] 
+2022-11-16T21:37:42.0075717Z  [4160] [2022-11-16T21:37:32.720Z] HttpOptions
+2022-11-16T21:37:42.0076275Z  [4160] [2022-11-16T21:37:32.720Z] {
+2022-11-16T21:37:42.0076869Z  [4160] [2022-11-16T21:37:32.720Z]   "DynamicThrottlesEnabled": false,
+2022-11-16T21:37:42.0077559Z  [4160] [2022-11-16T21:37:32.720Z]   "EnableChunkedRequestBinding": false,
+2022-11-16T21:37:42.0078595Z  [4160] [2022-11-16T21:37:32.720Z]   "MaxConcurrentRequests": -1,
+2022-11-16T21:37:42.0079461Z  [4160] [2022-11-16T21:37:32.720Z]   "MaxOutstandingRequests": -1,
+2022-11-16T21:37:42.0080430Z  [4160] [2022-11-16T21:37:32.721Z]   "RoutePrefix": "api"
+2022-11-16T21:37:42.0081030Z  [4160] [2022-11-16T21:37:32.721Z] }
+2022-11-16T21:37:42.0081679Z  [4160] [2022-11-16T21:37:32.722Z] Initializing function HTTP routes
+2022-11-16T21:37:42.0082511Z  [4160] [2022-11-16T21:37:32.722Z] Mapped function route 'api/addproductwithmultipleprimarycolumnsandidentity' [get] to 'AddProductWithMultiplePrimaryColumnsAndIdentity'
+2022-11-16T21:37:42.0084204Z  [4160] [2022-11-16T21:37:32.722Z] 
+2022-11-16T21:37:42.0085122Z  [4160] [2022-11-16T21:37:32.731Z] Host initialized (177ms)
+2022-11-16T21:37:42.0086002Z  [4160] [2022-11-16T21:37:32.731Z] Host state changed from Default to Initialized.
+2022-11-16T21:37:42.0086858Z  [4160] [2022-11-16T21:37:32.734Z] Host started (189ms)
+2022-11-16T21:37:42.0087632Z  [4160] [2022-11-16T21:37:32.734Z] Job host started
+2022-11-16T21:37:42.0088470Z  [4160] [2022-11-16T21:37:32.739Z] File event source initialized.
+2022-11-16T21:37:42.0089301Z  [4160] [2022-11-16T21:37:32.740Z] Debug file watch initialized.
+2022-11-16T21:37:42.0090037Z  [4160] [2022-11-16T21:37:32.741Z] Diagnostic file watch initialized.
+2022-11-16T21:37:42.0090896Z  [4160] [2022-11-16T21:37:32.741Z] Hosting started
+2022-11-16T21:37:42.0091753Z  [4160] [2022-11-16T21:37:32.741Z] Host state changed from Initialized to Running.
+2022-11-16T21:37:42.0092674Z  [4160] [2022-11-16T21:37:32.743Z] Startup operation 'a852fd93-8626-4f09-aa10-185a368c61de' completed.
+2022-11-16T21:37:42.0093414Z  [4160] Functions:
+2022-11-16T21:37:42.0094459Z  [4160] 	AddProductWithMultiplePrimaryColumnsAndIdentity: [GET] http://localhost:7071/api/addproductwithmultipleprimarycolumnsandidentity
+2022-11-16T21:37:42.0095782Z  [4160] [2022-11-16T21:37:32.833Z] System Log: { Log-Level: Information; Log-Message: Azure Functions PowerShell Worker version [4.0.2304.0]. }
+2022-11-16T21:37:42.0096873Z  [4160] [2022-11-16T21:37:33.795Z] System Log: { Log-Level: Information; Log-Message: PowerShell version: '7.2.6'. }
+2022-11-16T21:37:42.0097945Z  [4160] [2022-11-16T21:37:34.082Z] System Log: { Log-Level: Information; Log-Message: The enforced concurrency level (pool size limit) is '1000'. }
+2022-11-16T21:37:42.0099012Z  [4160] [2022-11-16T21:37:34.192Z] Established RPC channel. WorkerId: 7dfa7f51-0001-4114-ba36-4d81766a098f
+2022-11-16T21:37:42.0100031Z  [4160] [2022-11-16T21:37:34.194Z] [channel] received 7dfa7f51-0001-4114-ba36-4d81766a098f: StartStream
+2022-11-16T21:37:42.0100963Z  [4160] [2022-11-16T21:37:34.197Z] Worker Process started. Received StartStream message
+2022-11-16T21:37:42.0102070Z  [4160] [2022-11-16T21:37:34.274Z] [channel] received 7dfa7f51-0001-4114-ba36-4d81766a098f: WorkerInitResponse
+2022-11-16T21:37:42.0103457Z  [4160] [2022-11-16T21:37:34.274Z] Received WorkerInitResponse. Worker process initialized
+2022-11-16T21:37:42.0104786Z  [4160] [2022-11-16T21:37:34.280Z] Worker capabilities: { "RpcHttpBodyOnly": "true", "WorkerStatus": "true" }
+2022-11-16T21:37:42.0106338Z  [4160] [2022-11-16T21:37:34.280Z] Updating capabilities: { "RpcHttpBodyOnly": "true", "WorkerStatus": "true" }
+2022-11-16T21:37:42.0107961Z  [4160] [2022-11-16T21:37:34.282Z] Adding jobhost language worker channel for runtime: powershell. workerId:7dfa7f51-0001-4114-ba36-4d81766a098f
+2022-11-16T21:37:42.0109282Z  [4160] [2022-11-16T21:37:34.283Z] Setting up FunctionInvocationBuffer for function: 'AddProductWithMultiplePrimaryColumnsAndIdentity' with functionId: '8a3eafed-eaec-43a1-b25e-905a6558a9ab'
+2022-11-16T21:37:42.0110626Z  [4160] [2022-11-16T21:37:34.287Z] Sending FunctionLoadRequest for function:'AddProductWithMultiplePrimaryColumnsAndIdentity' with functionId:'8a3eafed-eaec-43a1-b25e-905a6558a9ab'
+2022-11-16T21:37:42.0111774Z  [4160] [2022-11-16T21:37:34.290Z] Worker process started and initialized.
+2022-11-16T21:37:42.0112754Z  [4160] [2022-11-16T21:37:34.320Z] System Log: { Log-Level: Trace; Log-Message: First function load request completed in 19 ms. }
+2022-11-16T21:37:42.0113773Z  [4160] [2022-11-16T21:37:34.383Z] [channel] received 7dfa7f51-0001-4114-ba36-4d81766a098f: FunctionLoadResponse
+2022-11-16T21:37:42.0114931Z  [4160] [2022-11-16T21:37:34.384Z] Received FunctionLoadResponse for function: 'AddProductWithMultiplePrimaryColumnsAndIdentity' with functionId: '8a3eafed-eaec-43a1-b25e-905a6558a9ab'.
+2022-11-16T21:37:42.0116367Z  [4160] [2022-11-16T21:37:37.605Z] Request [61eaaf82-2a3c-414d-8003-4036d975d7b3] HEAD http://127.0.0.1:10000/devstoreaccount1/azure-webjobs-hosts/locks/win7v9j89oeljj-1409451356/host
+2022-11-16T21:37:42.0118118Z  [4160] [2022-11-16T21:37:37.605Z] x-ms-version:2021-08-06
+2022-11-16T21:37:42.0118727Z  [4160] [2022-11-16T21:37:37.606Z] Accept:application/xml
+2022-11-16T21:37:42.0119355Z  [4160] [2022-11-16T21:37:37.606Z] x-ms-client-request-id:61eaaf82-2a3c-414d-8003-4036d975d7b3
+2022-11-16T21:37:42.0119994Z  [4160] [2022-11-16T21:37:37.606Z] x-ms-return-client-request-id:true
+2022-11-16T21:37:42.0120675Z  [4160] [2022-11-16T21:37:37.606Z] User-Agent:azsdk-net-Storage.Blobs/12.13.0,(.NET 6.0.10; Microsoft Windows 10.0.20348)
+2022-11-16T21:37:42.0121358Z  [4160] [2022-11-16T21:37:37.606Z] x-ms-date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0122233Z  [4160] [2022-11-16T21:37:37.606Z] Authorization:REDACTED
+2022-11-16T21:37:42.0123121Z  [4160] [2022-11-16T21:37:37.606Z] client assembly: Azure.Storage.Blobs
+2022-11-16T21:37:42.0124020Z  [4160] [2022-11-16T21:37:37.628Z] Response [61eaaf82-2a3c-414d-8003-4036d975d7b3] 200 OK (00.0s)
+2022-11-16T21:37:42.0125230Z  [4160] [2022-11-16T21:37:37.628Z] Server:Azurite-Blob/3.20.1
+2022-11-16T21:37:42.0126350Z  [4160] [2022-11-16T21:37:37.628Z] x-ms-creation-time:Wed, 16 Nov 2022 21:28:50 GMT
+2022-11-16T21:37:42.0127387Z  [4160] [2022-11-16T21:37:37.628Z] x-ms-meta-FunctionInstance:REDACTED
+2022-11-16T21:37:42.0128369Z  [4160] [2022-11-16T21:37:37.628Z] x-ms-blob-type:BlockBlob
+2022-11-16T21:37:42.0129233Z  [4160] [2022-11-16T21:37:37.628Z] x-ms-lease-state:expired
+2022-11-16T21:37:42.0130099Z  [4160] [2022-11-16T21:37:37.628Z] x-ms-lease-status:unlocked
+2022-11-16T21:37:42.0130924Z  [4160] [2022-11-16T21:37:37.628Z] ETag:"0x24AB95262D8E180"
+2022-11-16T21:37:42.0131816Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-client-request-id:61eaaf82-2a3c-414d-8003-4036d975d7b3
+2022-11-16T21:37:42.0132770Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-request-id:0f316cf1-7213-464a-adec-152777e4dda2
+2022-11-16T21:37:42.0133674Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-version:2021-10-04
+2022-11-16T21:37:42.0134514Z  [4160] [2022-11-16T21:37:37.629Z] Date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0135361Z  [4160] [2022-11-16T21:37:37.629Z] Accept-Ranges:bytes
+2022-11-16T21:37:42.0136221Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-server-encrypted:true
+2022-11-16T21:37:42.0137068Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-access-tier:Hot
+2022-11-16T21:37:42.0137895Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-access-tier-inferred:true
+2022-11-16T21:37:42.0138820Z  [4160] [2022-11-16T21:37:37.629Z] x-ms-access-tier-change-time:Wed, 16 Nov 2022 21:28:50 GMT
+2022-11-16T21:37:42.0139853Z  [4160] [2022-11-16T21:37:37.629Z] Connection:keep-alive
+2022-11-16T21:37:42.0140718Z  [4160] [2022-11-16T21:37:37.630Z] Keep-Alive:REDACTED
+2022-11-16T21:37:42.0141593Z  [4160] [2022-11-16T21:37:37.630Z] Last-Modified:Wed, 16 Nov 2022 21:36:01 GMT
+2022-11-16T21:37:42.0142326Z  [4160] [2022-11-16T21:37:37.630Z] Content-Length:0
+2022-11-16T21:37:42.0142982Z  [4160] [2022-11-16T21:37:37.630Z] Content-Type:application/octet-stream
+2022-11-16T21:37:42.0143699Z  [4160] [2022-11-16T21:37:37.630Z] Content-MD5:1B2M2Y8AsgTpgAmY7PhCfg==
+2022-11-16T21:37:42.0144297Z  [4160] [2022-11-16T21:37:37.630Z] 
+2022-11-16T21:37:42.0145625Z  [4160] [2022-11-16T21:37:37.648Z] Request [388ddf5c-515a-48ba-b4b5-b507a60129fb] PUT http://127.0.0.1:10000/devstoreaccount1/azure-webjobs-hosts/locks/win7v9j89oeljj-1409451356/host?comp=lease
+2022-11-16T21:37:42.0147193Z  [4160] [2022-11-16T21:37:37.648Z] x-ms-lease-action:acquire
+2022-11-16T21:37:42.0148360Z  [4160] [2022-11-16T21:37:37.648Z] x-ms-lease-duration:15
+2022-11-16T21:37:42.0149659Z  [4160] [2022-11-16T21:37:37.648Z] x-ms-proposed-lease-id:0000000000000000000000004C4DA49D
+2022-11-16T21:37:42.0150745Z  [4160] [2022-11-16T21:37:37.648Z] x-ms-version:2021-08-06
+2022-11-16T21:37:42.0151821Z  [4160] [2022-11-16T21:37:37.649Z] Accept:application/xml
+2022-11-16T21:37:42.0153119Z  [4160] [2022-11-16T21:37:37.649Z] x-ms-client-request-id:388ddf5c-515a-48ba-b4b5-b507a60129fb
+2022-11-16T21:37:42.0154221Z  [4160] [2022-11-16T21:37:37.649Z] x-ms-return-client-request-id:true
+2022-11-16T21:37:42.0155588Z  [4160] [2022-11-16T21:37:37.649Z] User-Agent:azsdk-net-Storage.Blobs/12.13.0,(.NET 6.0.10; Microsoft Windows 10.0.20348)
+2022-11-16T21:37:42.0156627Z  [4160] [2022-11-16T21:37:37.649Z] x-ms-date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0157536Z  [4160] [2022-11-16T21:37:37.649Z] Authorization:REDACTED
+2022-11-16T21:37:42.0158353Z  [4160] [2022-11-16T21:37:37.649Z] client assembly: Azure.Storage.Blobs
+2022-11-16T21:37:42.0159307Z  [4160] [2022-11-16T21:37:37.652Z] Response [388ddf5c-515a-48ba-b4b5-b507a60129fb] 201 Created (00.0s)
+2022-11-16T21:37:42.0160083Z  [4160] [2022-11-16T21:37:37.652Z] Server:Azurite-Blob/3.20.1
+2022-11-16T21:37:42.0160748Z  [4160] [2022-11-16T21:37:37.653Z] ETag:"0x24AB95262D8E180"
+2022-11-16T21:37:42.0161427Z  [4160] [2022-11-16T21:37:37.653Z] x-ms-lease-id:0000000000000000000000004C4DA49D
+2022-11-16T21:37:42.0162638Z  [4160] [2022-11-16T21:37:37.653Z] x-ms-client-request-id:388ddf5c-515a-48ba-b4b5-b507a60129fb
+2022-11-16T21:37:42.0163658Z  [4160] [2022-11-16T21:37:37.653Z] x-ms-request-id:223e3e2b-596f-4797-afcc-262b719eb75b
+2022-11-16T21:37:42.0164433Z  [4160] [2022-11-16T21:37:37.653Z] x-ms-version:2021-10-04
+2022-11-16T21:37:42.0165221Z  [4160] [2022-11-16T21:37:37.653Z] Date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0166268Z  [4160] [2022-11-16T21:37:37.653Z] Connection:keep-alive
+2022-11-16T21:37:42.0166954Z  [4160] [2022-11-16T21:37:37.653Z] Keep-Alive:REDACTED
+2022-11-16T21:37:42.0167874Z  [4160] [2022-11-16T21:37:37.653Z] Last-Modified:Wed, 16 Nov 2022 21:36:01 GMT
+2022-11-16T21:37:42.0168704Z  [4160] [2022-11-16T21:37:37.653Z] Content-Length:0
+2022-11-16T21:37:42.0169334Z  [4160] [2022-11-16T21:37:37.654Z] 
+2022-11-16T21:37:42.0170385Z  [4160] [2022-11-16T21:37:37.657Z] Request [cd86088f-1b71-4758-a290-12a938be5241] HEAD http://127.0.0.1:10000/devstoreaccount1/azure-webjobs-hosts/locks/win7v9j89oeljj-1409451356/host
+2022-11-16T21:37:42.0171457Z  [4160] [2022-11-16T21:37:37.657Z] x-ms-version:2021-08-06
+2022-11-16T21:37:42.0172152Z  [4160] [2022-11-16T21:37:37.657Z] Accept:application/xml
+2022-11-16T21:37:42.0172866Z  [4160] [2022-11-16T21:37:37.657Z] x-ms-client-request-id:cd86088f-1b71-4758-a290-12a938be5241
+2022-11-16T21:37:42.0173614Z  [4160] [2022-11-16T21:37:37.657Z] x-ms-return-client-request-id:true
+2022-11-16T21:37:42.0174417Z  [4160] [2022-11-16T21:37:37.657Z] User-Agent:azsdk-net-Storage.Blobs/12.13.0,(.NET 6.0.10; Microsoft Windows 10.0.20348)
+2022-11-16T21:37:42.0175319Z  [4160] [2022-11-16T21:37:37.657Z] x-ms-date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0175992Z  [4160] [2022-11-16T21:37:37.658Z] Authorization:REDACTED
+2022-11-16T21:37:42.0176637Z  [4160] [2022-11-16T21:37:37.658Z] client assembly: Azure.Storage.Blobs
+2022-11-16T21:37:42.0177369Z  [4160] [2022-11-16T21:37:37.660Z] Response [cd86088f-1b71-4758-a290-12a938be5241] 200 OK (00.0s)
+2022-11-16T21:37:42.0178068Z  [4160] [2022-11-16T21:37:37.660Z] Server:Azurite-Blob/3.20.1
+2022-11-16T21:37:42.0178768Z  [4160] [2022-11-16T21:37:37.663Z] x-ms-creation-time:Wed, 16 Nov 2022 21:28:50 GMT
+2022-11-16T21:37:42.0179512Z  [4160] [2022-11-16T21:37:37.663Z] x-ms-meta-FunctionInstance:REDACTED
+2022-11-16T21:37:42.0180179Z  [4160] [2022-11-16T21:37:37.663Z] x-ms-blob-type:BlockBlob
+2022-11-16T21:37:42.0180820Z  [4160] [2022-11-16T21:37:37.664Z] x-ms-lease-duration:fixed
+2022-11-16T21:37:42.0181460Z  [4160] [2022-11-16T21:37:37.664Z] x-ms-lease-state:leased
+2022-11-16T21:37:42.0182095Z  [4160] [2022-11-16T21:37:37.664Z] x-ms-lease-status:locked
+2022-11-16T21:37:42.0182749Z  [4160] [2022-11-16T21:37:37.664Z] ETag:"0x24AB95262D8E180"
+2022-11-16T21:37:42.0183450Z  [4160] [2022-11-16T21:37:37.664Z] x-ms-client-request-id:cd86088f-1b71-4758-a290-12a938be5241
+2022-11-16T21:37:42.0184219Z  [4160] [2022-11-16T21:37:37.664Z] x-ms-request-id:b4278a5b-a6d0-4ede-bc71-d495731d0ff1
+2022-11-16T21:37:42.0184916Z  [4160] [2022-11-16T21:37:37.664Z] x-ms-version:2021-10-04
+2022-11-16T21:37:42.0185597Z  [4160] [2022-11-16T21:37:37.664Z] Date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0186247Z  [4160] [2022-11-16T21:37:37.664Z] Accept-Ranges:bytes
+2022-11-16T21:37:42.0186886Z  [4160] [2022-11-16T21:37:37.665Z] x-ms-server-encrypted:true
+2022-11-16T21:37:42.0187531Z  [4160] [2022-11-16T21:37:37.665Z] x-ms-access-tier:Hot
+2022-11-16T21:37:42.0188204Z  [4160] [2022-11-16T21:37:37.665Z] x-ms-access-tier-inferred:true
+2022-11-16T21:37:42.0188930Z  [4160] [2022-11-16T21:37:37.665Z] x-ms-access-tier-change-time:Wed, 16 Nov 2022 21:28:50 GMT
+2022-11-16T21:37:42.0189647Z  [4160] [2022-11-16T21:37:37.665Z] Connection:keep-alive
+2022-11-16T21:37:42.0190271Z  [4160] [2022-11-16T21:37:37.665Z] Keep-Alive:REDACTED
+2022-11-16T21:37:42.0190965Z  [4160] [2022-11-16T21:37:37.665Z] Last-Modified:Wed, 16 Nov 2022 21:36:01 GMT
+2022-11-16T21:37:42.0191629Z  [4160] [2022-11-16T21:37:37.665Z] Content-Length:0
+2022-11-16T21:37:42.0192276Z  [4160] [2022-11-16T21:37:37.665Z] Content-Type:application/octet-stream
+2022-11-16T21:37:42.0192955Z  [4160] [2022-11-16T21:37:37.665Z] Content-MD5:1B2M2Y8AsgTpgAmY7PhCfg==
+2022-11-16T21:37:42.0193752Z  [4160] [2022-11-16T21:37:37.665Z] 
+2022-11-16T21:37:42.0194527Z  [4160] [2022-11-16T21:37:37.671Z] Request [4cf64f56-05e9-4821-88d8-851ebe12f762] PUT http://127.0.0.1:10000/devstoreaccount1/azure-webjobs-hosts/locks/win7v9j89oeljj-1409451356/host?comp=metadata
+2022-11-16T21:37:42.0195930Z  [4160] [2022-11-16T21:37:37.671Z] x-ms-meta-FunctionInstance:REDACTED
+2022-11-16T21:37:42.0196533Z  [4160] [2022-11-16T21:37:37.671Z] x-ms-lease-id:0000000000000000000000004C4DA49D
+2022-11-16T21:37:42.0197129Z  [4160] [2022-11-16T21:37:37.671Z] x-ms-version:2021-08-06
+2022-11-16T21:37:42.0197639Z  [4160] [2022-11-16T21:37:37.671Z] Accept:application/xml
+2022-11-16T21:37:42.0198228Z  [4160] [2022-11-16T21:37:37.671Z] x-ms-client-request-id:4cf64f56-05e9-4821-88d8-851ebe12f762
+2022-11-16T21:37:42.0198847Z  [4160] [2022-11-16T21:37:37.672Z] x-ms-return-client-request-id:true
+2022-11-16T21:37:42.0199573Z  [4160] [2022-11-16T21:37:37.672Z] User-Agent:azsdk-net-Storage.Blobs/12.13.0,(.NET 6.0.10; Microsoft Windows 10.0.20348)
+2022-11-16T21:37:42.0200243Z  [4160] [2022-11-16T21:37:37.672Z] x-ms-date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0200803Z  [4160] [2022-11-16T21:37:37.672Z] Authorization:REDACTED
+2022-11-16T21:37:42.0201361Z  [4160] [2022-11-16T21:37:37.672Z] client assembly: Azure.Storage.Blobs
+2022-11-16T21:37:42.0201954Z  [4160] [2022-11-16T21:37:37.679Z] Response [4cf64f56-05e9-4821-88d8-851ebe12f762] 200 OK (00.0s)
+2022-11-16T21:37:42.0202604Z  [4160] [2022-11-16T21:37:37.679Z] Server:Azurite-Blob/3.20.1
+2022-11-16T21:37:42.0203121Z  [4160] [2022-11-16T21:37:37.679Z] ETag:"0x2122FD7944B2400"
+2022-11-16T21:37:42.0203729Z  [4160] [2022-11-16T21:37:37.680Z] x-ms-client-request-id:4cf64f56-05e9-4821-88d8-851ebe12f762
+2022-11-16T21:37:42.0204381Z  [4160] [2022-11-16T21:37:37.680Z] x-ms-request-id:ae8f5cfe-fde7-40a0-8aaf-60b8a904e8a6
+2022-11-16T21:37:42.0204957Z  [4160] [2022-11-16T21:37:37.680Z] x-ms-version:2021-10-04
+2022-11-16T21:37:42.0205651Z  [4160] [2022-11-16T21:37:37.680Z] Date:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0206258Z  [4160] [2022-11-16T21:37:37.680Z] x-ms-request-server-encrypted:true
+2022-11-16T21:37:42.0206804Z  [4160] [2022-11-16T21:37:37.680Z] Connection:keep-alive
+2022-11-16T21:37:42.0207323Z  [4160] [2022-11-16T21:37:37.680Z] Keep-Alive:REDACTED
+2022-11-16T21:37:42.0207876Z  [4160] [2022-11-16T21:37:37.682Z] Last-Modified:Wed, 16 Nov 2022 21:37:37 GMT
+2022-11-16T21:37:42.0208449Z  [4160] [2022-11-16T21:37:37.682Z] Content-Length:0
+2022-11-16T21:37:42.0208900Z  [4160] [2022-11-16T21:37:37.682Z] 
+2022-11-16T21:37:42.0209459Z  [4160] [2022-11-16T21:37:37.690Z] Host lock lease acquired by instance ID '0000000000000000000000004C4DA49D'.
+2022-11-16T21:37:42.0209984Z  Azure Function host started!
+2022-11-16T21:37:42.0210639Z  [2022-11-16T21:37:37.743Z] Sending GET request: http://localhost:7071/api/AddProductWithMultiplePrimaryColumnsAndIdentity?externalId=101&name=MyProduct&cost=1
+2022-11-16T21:37:42.0211365Z  [4160] [2022-11-16T21:37:39.778Z] Executing HTTP request: {
+2022-11-16T21:37:42.0211920Z  [4160] [2022-11-16T21:37:39.778Z]   requestId: "79b5c1b7-cc65-40fd-a04f-9b6447e27de7",
+2022-11-16T21:37:42.0212455Z  [4160] [2022-11-16T21:37:39.778Z]   method: "GET",
+2022-11-16T21:37:42.0212950Z  [4160] [2022-11-16T21:37:39.778Z]   userAgent: "(null)",
+2022-11-16T21:37:42.0213510Z  [4160] [2022-11-16T21:37:39.779Z]   uri: "/api/AddProductWithMultiplePrimaryColumnsAndIdentity"
+2022-11-16T21:37:42.0214034Z  [4160] [2022-11-16T21:37:39.779Z] }
+2022-11-16T21:37:42.0214741Z  [4160] [2022-11-16T21:37:39.889Z] Request successfully matched the route with name 'AddProductWithMultiplePrimaryColumnsAndIdentity' and template 'api/addproductwithmultipleprimarycolumnsandidentity'
+2022-11-16T21:37:42.0236915Z  [4160] [2022-11-16T21:37:39.982Z] Executing 'Functions.AddProductWithMultiplePrimaryColumnsAndIdentity' (Reason='This function was programmatically called via the host APIs.', Id=4b4313d1-c40d-4e3f-aef5-1e29bded1f09)
+2022-11-16T21:37:42.0238195Z  [4160] [2022-11-16T21:37:40.502Z] System Log: { Invocation-Id: 4b4313d1-c40d-4e3f-aef5-1e29bded1f09; Log-Level: Trace; Log-Message: Profile invocation completed in 450 ms. }
+2022-11-16T21:37:42.0240557Z  [4160] [2022-11-16T21:37:40.514Z] System Log: { Invocation-Id: 4b4313d1-c40d-4e3f-aef5-1e29bded1f09; Log-Level: Trace; Log-Message: Invoking function 'AddProductWithMultiplePrimaryColumnsAndIdentity' code 470 ms after receiving request. Invocation performance details: DependenciesAvailable: 0 ms; RunspaceAvailable: 463 ms; MetadataAndTraceContextReady: 465 ms; FunctionCodeReady: 466 ms; InputBindingValuesReady: 469 ms; InvokingFunctionCode: 469 ms;  }
+2022-11-16T21:37:42.0242054Z  [4160] [2022-11-16T21:37:40.555Z] [channel] received 7dfa7f51-0001-4114-ba36-4d81766a098f: RpcLog
+2022-11-16T21:37:42.0242874Z  [4160] [2022-11-16T21:37:40.559Z] INFORMATION: PowerShell function with SQL Output Binding processed a request.
+2022-11-16T21:37:42.0243688Z  [4160] [2022-11-16T21:37:40.682Z] [channel] received 7dfa7f51-0001-4114-ba36-4d81766a098f: InvocationResponse
+2022-11-16T21:37:42.0244504Z  [4160] [2022-11-16T21:37:40.685Z] InvocationResponse received for invocation id: '4b4313d1-c40d-4e3f-aef5-1e29bded1f09'
+2022-11-16T21:37:42.0245266Z  [4160] [2022-11-16T21:37:40.804Z] TID:4 BEGIN UpsertRowsAsync
+2022-11-16T21:37:42.0245928Z  [4160] [2022-11-16T21:37:40.829Z] TID:4 BEGIN OpenUpsertRowsAsyncConnection
+2022-11-16T21:37:42.0246716Z  [4160] [2022-11-16T21:37:41.007Z] TID:7 END OpenUpsertRowsAsyncConnection
+2022-11-16T21:37:42.0247419Z  [4160] [2022-11-16T21:37:41.033Z] TID:7 BEGIN RetrieveTableInformationAsync
+2022-11-16T21:37:42.0248099Z  [4160] [2022-11-16T21:37:41.103Z] TID:7 BEGIN GetCaseSensitivity Query="
+2022-11-16T21:37:42.0248722Z  [4160] [2022-11-16T21:37:41.103Z]                     SELECT
+2022-11-16T21:37:42.0249457Z  [4160] [2022-11-16T21:37:41.103Z]                         DATABASEPROPERTYEX('SqlBindingsTest_WIN_7V9J89OELJJ_1_5392_46', 'Collation') AS Collation;"
+2022-11-16T21:37:42.0250655Z  [4160] [2022-11-16T21:37:41.163Z] TID:4 END GetCaseSensitivity Collation=SQL_Latin1_General_CP1_CI_AS CaseSensitive=False Duration=57ms
+2022-11-16T21:37:42.0251750Z  [4160] [2022-11-16T21:37:41.165Z] TID:4 BEGIN GetColumnDefinitions Query="
+2022-11-16T21:37:42.0252770Z  [4160] [2022-11-16T21:37:41.165Z]                     select
+2022-11-16T21:37:42.0253712Z  [4160] [2022-11-16T21:37:41.165Z] 	                    COLUMN_NAME, DATA_TYPE +
+2022-11-16T21:37:42.0254566Z  [4160] [2022-11-16T21:37:41.165Z] 		                    case
+2022-11-16T21:37:42.0255408Z  [4160] [2022-11-16T21:37:41.165Z] 			                    when CHARACTER_MAXIMUM_LENGTH = -1 then '(max)'
+2022-11-16T21:37:42.0256414Z  [4160] [2022-11-16T21:37:41.165Z] 			                    when CHARACTER_MAXIMUM_LENGTH <> -1 then '(' + cast(CHARACTER_MAXIMUM_LENGTH as varchar(4)) + ')'
+2022-11-16T21:37:42.0257630Z  [4160] [2022-11-16T21:37:41.165Z]                                 when DATETIME_PRECISION is not null and DATA_TYPE not in ('datetime', 'date', 'smalldatetime') then '(' + cast(DATETIME_PRECISION as varchar(1)) + ')'
+2022-11-16T21:37:42.0259664Z  [4160] [2022-11-16T21:37:41.165Z] 			                    when DATA_TYPE in ('decimal', 'numeric') then '(' + cast(NUMERIC_PRECISION as varchar(9)) + ',' + + cast(NUMERIC_SCALE as varchar(9)) + ')'
+2022-11-16T21:37:42.0260603Z  [4160] [2022-11-16T21:37:41.166Z] 			                    else ''
+2022-11-16T21:37:42.0261244Z  [4160] [2022-11-16T21:37:41.166Z] 		                    end as COLUMN_DEFINITION
+2022-11-16T21:37:42.0261879Z  [4160] [2022-11-16T21:37:41.166Z]                     from
+2022-11-16T21:37:42.0262487Z  [4160] [2022-11-16T21:37:41.166Z] 	                    INFORMATION_SCHEMA.COLUMNS c
+2022-11-16T21:37:42.0263121Z  [4160] [2022-11-16T21:37:41.166Z]                     where
+2022-11-16T21:37:42.0263792Z  [4160] [2022-11-16T21:37:41.166Z] 	                    c.TABLE_NAME = 'ProductsWithMultiplePrimaryColumnsAndIdentity'
+2022-11-16T21:37:42.0264464Z  [4160] [2022-11-16T21:37:41.166Z]                     and
+2022-11-16T21:37:42.0265062Z  [4160] [2022-11-16T21:37:41.166Z]                         c.TABLE_SCHEMA = 'dbo'"
+2022-11-16T21:37:42.0265883Z  [4160] [2022-11-16T21:37:41.290Z] TID:21 END GetColumnDefinitions Duration=125ms
+2022-11-16T21:37:42.0266570Z  [4160] [2022-11-16T21:37:41.291Z] TID:21 BEGIN GetPrimaryKeys Query="
+2022-11-16T21:37:42.0267188Z  [4160] [2022-11-16T21:37:41.291Z]                     SELECT
+2022-11-16T21:37:42.0267782Z  [4160] [2022-11-16T21:37:41.291Z]                         ccu.COLUMN_NAME,
+2022-11-16T21:37:42.0268418Z  [4160] [2022-11-16T21:37:41.292Z]                         c.is_identity,
+2022-11-16T21:37:42.0269003Z  [4160] [2022-11-16T21:37:41.292Z]                         case
+2022-11-16T21:37:42.0269647Z  [4160] [2022-11-16T21:37:41.292Z]                             when isc.COLUMN_DEFAULT = NULL then 'false'
+2022-11-16T21:37:42.0270301Z  [4160] [2022-11-16T21:37:41.292Z]                             else 'true'
+2022-11-16T21:37:42.0270933Z  [4160] [2022-11-16T21:37:41.292Z]                         end as has_default
+2022-11-16T21:37:42.0271516Z  [4160] [2022-11-16T21:37:41.292Z]                     FROM
+2022-11-16T21:37:42.0272148Z  [4160] [2022-11-16T21:37:41.292Z]                         INFORMATION_SCHEMA.TABLE_CONSTRAINTS tc
+2022-11-16T21:37:42.0272788Z  [4160] [2022-11-16T21:37:41.292Z]                     INNER JOIN
+2022-11-16T21:37:42.0273609Z  [4160] [2022-11-16T21:37:41.292Z]                         INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE ccu ON ccu.CONSTRAINT_NAME = tc.CONSTRAINT_NAME AND ccu.TABLE_NAME = tc.TABLE_NAME
+2022-11-16T21:37:42.0274474Z  [4160] [2022-11-16T21:37:41.293Z]                     INNER JOIN
+2022-11-16T21:37:42.0275260Z  [4160] [2022-11-16T21:37:41.293Z]                         sys.columns c ON c.object_id = OBJECT_ID('[dbo].[ProductsWithMultiplePrimaryColumnsAndIdentity]') AND c.name = ccu.COLUMN_NAME
+2022-11-16T21:37:42.0276065Z  [4160] [2022-11-16T21:37:41.293Z]                     INNER JOIN
+2022-11-16T21:37:42.0276878Z  [4160] [2022-11-16T21:37:41.293Z]                         INFORMATION_SCHEMA.COLUMNS isc ON isc.TABLE_NAME = 'ProductsWithMultiplePrimaryColumnsAndIdentity' AND isc.COLUMN_NAME = ccu.COLUMN_NAME
+2022-11-16T21:37:42.0277682Z  [4160] [2022-11-16T21:37:41.293Z]                     WHERE
+2022-11-16T21:37:42.0278303Z  [4160] [2022-11-16T21:37:41.293Z]                         tc.CONSTRAINT_TYPE = 'PRIMARY KEY'
+2022-11-16T21:37:42.0278949Z  [4160] [2022-11-16T21:37:41.293Z]                     and
+2022-11-16T21:37:42.0279627Z  [4160] [2022-11-16T21:37:41.293Z]                         tc.TABLE_NAME = 'ProductsWithMultiplePrimaryColumnsAndIdentity'
+2022-11-16T21:37:42.0280297Z  [4160] [2022-11-16T21:37:41.293Z]                     and
+2022-11-16T21:37:42.0280917Z  [4160] [2022-11-16T21:37:41.293Z]                         tc.TABLE_SCHEMA = 'dbo'"
+2022-11-16T21:37:42.0281585Z  [4160] [2022-11-16T21:37:41.593Z] TID:21 END GetPrimaryKeys Duration=302ms
+2022-11-16T21:37:42.0282791Z  [4160] [2022-11-16T21:37:41.598Z] TID:21 END RetrieveTableInformationAsync Duration=492ms DB and Table: SqlBindingsTest_WIN_7V9J89OELJJ_1_5392_46.[dbo].[ProductsWithMultiplePrimaryColumnsAndIdentity]. Primary keys: [productid,externalid]. SQL Column and Definitions:  [[productid, int],[externalid, int],[name, nvarchar(100)],[cost, int]] Object columns: [cost,externalId,name]
+2022-11-16T21:37:42.0284017Z  [4160] [2022-11-16T21:37:41.608Z] TID:21 BEGIN UpsertRowsTransaction
+2022-11-16T21:37:42.0285067Z  [4160] [2022-11-16T21:37:41.628Z] TID:21 UpsertRowsTransactionBatch - Query=WITH cte AS ( SELECT * FROM OPENJSON(@rowData) WITH ([externalid] int,[name] nvarchar(100),[cost] int) ) INSERT INTO [dbo].[ProductsWithMultiplePrimaryColumnsAndIdentity] ([cost],[externalId],[name]) SELECT * FROM cte;
+2022-11-16T21:37:42.0286321Z  [4160] [2022-11-16T21:37:41.795Z] Executed 'Functions.AddProductWithMultiplePrimaryColumnsAndIdentity' (Failed, Id=4b4313d1-c40d-4e3f-aef5-1e29bded1f09, Duration=1842ms)
+2022-11-16T21:37:42.0287843Z  [4160] [2022-11-16T21:37:41.795Z] System.Private.CoreLib: Exception while executing function: Functions.AddProductWithMultiplePrimaryColumnsAndIdentity. Microsoft.Azure.WebJobs.Host: Error while handling parameter _binder after function returned:. Microsoft.Azure.WebJobs.Extensions.Sql: Unexpected error upserting rows. Core Microsoft SqlClient Data Provider: Conversion failed when converting the nvarchar value 'MyProduct' to data type int.
+2022-11-16T21:37:42.0289267Z  [4160] [2022-11-16T21:37:41.814Z] Executed HTTP request: {
+2022-11-16T21:37:42.0289958Z  [4160] [2022-11-16T21:37:41.814Z]   requestId: "79b5c1b7-cc65-40fd-a04f-9b6447e27de7",
+2022-11-16T21:37:42.0290664Z  [4160] [2022-11-16T21:37:41.814Z]   identities: "(WebJobsAuthLevel:Admin)",
+2022-11-16T21:37:42.0291296Z  [4160] [2022-11-16T21:37:41.815Z]   status: "500",
+2022-11-16T21:37:42.0291899Z  [4160] [2022-11-16T21:37:41.815Z]   duration: "2035"
+2022-11-16T21:37:42.0292451Z  [4160] [2022-11-16T21:37:41.815Z] }
