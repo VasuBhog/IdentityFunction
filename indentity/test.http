@@ -1,1 +1,1 @@
-GET http://localhost:7071/api/AddProductWithMultiplePrimaryColumnsAndIdentity?externalId=101&name=MyProduct&cost=1
+GET http://localhost:7071/api/AddProductWithIdentityColumn?name=MyProduct&cost=1

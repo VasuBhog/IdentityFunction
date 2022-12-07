@@ -6,9 +6,10 @@
       "direction": "in",
       "type": "httpTrigger",
       "methods": [
-        "get"
+        "get",
+        "post"
       ],
-      "route": "addproductwithmultipleprimarycolumnsandidentity"
+      "route": "addproductwithidentitycolumn"
     },
     {
       "name": "response",
@@ -19,7 +20,7 @@
       "name": "product",
       "type": "sql",
       "direction": "out",
-      "commandText": "[master].[dbo].[ProductsWithMultiplePrimaryColumnsAndIdentity]",
+      "commandText": "[master].[dbo].[ProductsWithIdentity]",
       "connectionStringSetting": "SqlConnectionString"
     }
   ],

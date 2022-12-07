@@ -1,16 +1,15 @@
 using namespace System.Net
 
 # Trigger binding data passed in via param block
-param($Request)
+param($Request, $TriggerMetadata)
 
 # Write to the Azure Functions log stream.
 Write-Host "PowerShell function with SQL Output Binding processed a request."
 
-# Update req_query with the body of the request
+# Update req_query with the query of the request
 $req_query = @{
-    externalId=[int]$Request.QUERY.externalId;
     name=$Request.QUERY.name;
-    cost=[int]$Request.QUERY.cost;
+    cost=$Request.QUERY.cost;
 };
 
 # Assign the value we want to pass to the SQL Output binding. 

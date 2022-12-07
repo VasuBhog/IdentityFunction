@@ -1,7 +1,5 @@
-CREATE TABLE [ProductsWithMultiplePrimaryColumnsAndIdentity] (
-	[ProductId] [int] NOT NULL IDENTITY(1,1),
-	[ExternalId] [int] NOT NULL,
+CREATE TABLE [ProductsWithIdentity] (
+	[ProductId] [int] PRIMARY KEY NOT NULL IDENTITY(1,1),
 	[Name] [nvarchar](100) NULL,
-	[Cost] [int] NULL,
-	PRIMARY KEY (ProductId, ExternalId)
+	[Cost] [int] NULL
 )
